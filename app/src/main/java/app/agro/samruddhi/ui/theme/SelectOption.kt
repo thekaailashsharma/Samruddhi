@@ -68,7 +68,7 @@ fun SelectOption() {
 
 @Composable
 fun Select(text: String) {
-    Row(modifier = Modifier.padding(start = 20.dp , end= 20.dp, top= 20.dp)) {
+    Row(modifier = Modifier.padding(start = 24.dp , end= 24.dp, top= 20.dp)) {
         Card(modifier = Modifier.fillMaxWidth(), border = BorderStroke(1.dp, Color.Green),) {
             Text(
                 text = text,
