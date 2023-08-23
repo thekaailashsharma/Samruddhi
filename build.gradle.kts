@@ -12,4 +12,27 @@ plugins {
     id("com.google.devtools.ksp") version "1.8.10-1.0.9" apply false
     id("com.android.library") version "8.1.0" apply false
 }
+
+allprojects {
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile::class).all {
+        kotlinOptions {
+            freeCompilerArgs = freeCompilerArgs + listOf(
+                // Avoid having to stutter experimental annotations all over the codebase
+                "-opt-in=androidx.compose.ui.text.ExperimentalTextApi",
+                "-opt-in=androidx.compose.material3.ExperimentalMaterial3Api",
+                "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
+                "-opt-in=kotlinx.coroutines.InternalCoroutinesApi",
+                "-opt-in=androidx.compose.ui.ExperimentalComposeUiApi",
+                "-opt-in=androidx.compose.material.ExperimentalMaterialApi",
+                "-opt-in=androidx.compose.animation.ExperimentalAnimationApi",
+                "-opt-in=androidx.compose.foundation.ExperimentalFoundationApi",
+                "-opt-in=kotlinx.coroutines.DelicateCoroutinesApi",
+                "-opt-in=com.google.accompanist.navigation.material.ExperimentalMaterialNavigationApi",
+                "-opt-in=com.google.accompanist.permissions.ExperimentalPermissionsApi",
+                "-opt-in=androidx.compose.material.ExperimentalMaterialApi",
+                "-opt-in=androidx.paging.ExperimentalPagingApi"
+            )
+        }
+    }
+}
 true // Needed to make the Suppress annotation work for the plugins block
