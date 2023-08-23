@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     id("dagger.hilt.android.plugin")
     kotlin("kapt")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -82,6 +83,8 @@ dependencies {
 
     // dagger hilt
     implementation(libs.hilt.android)
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.play.services.auth)
     kapt(libs.hilt.compiler)
 
     // hilt navigation compose

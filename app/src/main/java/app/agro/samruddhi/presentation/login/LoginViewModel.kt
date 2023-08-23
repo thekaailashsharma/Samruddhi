@@ -7,10 +7,15 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.AndroidViewModel
 import app.agro.samruddhi.R
 import app.agro.samruddhi.presentation.home.ui.HomeCard
+import app.agro.samruddhi.presentation.login.ui.SignInState
 import app.agro.samruddhi.presentation.navigation.Screens
 import app.agro.samruddhi.presentation.selectcrop.ui.Crop
+import app.agro.samruddhi.presentation.utils.SignInResult
 import app.samruddhi.smartagro.presentation.login.ImageSlider
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import javax.inject.Inject
 
 @HiltViewModel
@@ -22,6 +27,23 @@ class LoginViewModel @Inject constructor(
     var selectCropsList: SnapshotStateList<Crop?> = mutableStateListOf(null)
     var homeCardList: MutableList<HomeCard> = mutableListOf()
     var selectedCropsList: SnapshotStateList<Crop?> = mutableStateListOf(null)
+
+    private val _state = MutableStateFlow(SignInState())
+    val state = _state.asStateFlow()
+
+
+    fun onSignInResult(result: SignInResult) {
+        _state.update {
+            it.copy(
+                isSignInSuccessful = result.data != null,
+                signInError = result.errorMessage
+            )
+        }
+    }
+
+    fun resetState() {
+        _state.update { SignInState() }
+    }
 
     init {
         sliderLists.add(
