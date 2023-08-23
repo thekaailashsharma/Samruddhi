@@ -69,6 +69,7 @@ dependencies {
 
     // Material
     implementation(libs.material3)
+    implementation(libs.androidx.material3)
 
     // Accompanist
     implementation(libs.accompanist.systemuicontroller)

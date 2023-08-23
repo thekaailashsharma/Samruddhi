@@ -31,9 +31,12 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SheetState
+import androidx.compose.material3.SheetValue
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
+import androidx.compose.material3.rememberBottomSheetScaffoldState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
@@ -61,10 +64,10 @@ import app.agro.samruddhi.presentation.login.LoginViewModel
 import app.agro.samruddhi.presentation.navigation.Screens
 import app.agro.samruddhi.presentation.utils.AutoSlider
 import app.agro.samruddhi.presentation.utils.GoogleAuthUiClient
+import app.agro.samruddhi.presentation.utils.TranslatorSheet
 import com.google.android.gms.auth.api.identity.Identity
 import kotlinx.coroutines.launch
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen(
     loginViewModel: LoginViewModel = hiltViewModel(),
@@ -107,6 +110,12 @@ fun LoginScreen(
             navController.navigate(Screens.SelectCrop.route)
         }
     }
+    val bottomSheetState = rememberBottomSheetScaffoldState(
+        bottomSheetState = SheetState(
+            initialValue = SheetValue.Expanded,
+            skipPartiallyExpanded = false
+        )
+    )
     val launcher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.StartIntentSenderForResult(),
         onResult = { result ->
@@ -128,48 +137,58 @@ fun LoginScreen(
             )
         },
     ) {
-        Column(
-            verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier
-                .fillMaxSize()
-                .verticalScroll(rememberScrollState())
-                .background(
-                    MaterialTheme.colorScheme.onPrimary
-                )
-                .padding(it)
+        TranslatorSheet(
+            bottomSheetState = bottomSheetState,
+            translatorList = loginViewModel.translateList
         ) {
-            Spacer(modifier = Modifier.height(20.dp))
-            AutoSlider(sliderList = loginViewModel.sliderLists)
-            Spacer(modifier = Modifier.height(60.dp))
-            LoginButton(name = name, phoneNumber = phoneNumber)
-            Divider(
-                color = MaterialTheme.colorScheme.outline,
-                thickness = 1.dp,
-                modifier = Modifier.padding(top = 40.dp, start = 40.dp, end = 40.dp, bottom = 20.dp)
-            )
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.Center,
-                verticalAlignment = Alignment.CenterVertically
+            Column(
+                verticalArrangement = Arrangement.Top,
+                horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .verticalScroll(rememberScrollState())
+                    .background(
+                        MaterialTheme.colorScheme.onPrimary
+                    )
+                    .padding(it)
             ) {
-                SocialLoginButton(
-                    imageVector = R.drawable.google,
-                    text = stringResource(id = R.string.google)
+                Spacer(modifier = Modifier.height(20.dp))
+                AutoSlider(sliderList = loginViewModel.sliderLists)
+                Spacer(modifier = Modifier.height(60.dp))
+                LoginButton(name = name, phoneNumber = phoneNumber)
+                Divider(
+                    color = MaterialTheme.colorScheme.outline,
+                    thickness = 1.dp,
+                    modifier = Modifier.padding(
+                        top = 40.dp,
+                        start = 40.dp,
+                        end = 40.dp,
+                        bottom = 20.dp
+                    )
+                )
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.Center,
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
-                    coroutineScope.launch {
-                        val signInIntentSender = googleAuthUiClient.signIn()
-                        launcher.launch(
-                            IntentSenderRequest.Builder(
-                                signInIntentSender ?: return@launch
-                            ).build()
-                        )
+                    SocialLoginButton(
+                        imageVector = R.drawable.google,
+                        text = stringResource(id = R.string.google)
+                    ) {
+                        coroutineScope.launch {
+                            val signInIntentSender = googleAuthUiClient.signIn()
+                            launcher.launch(
+                                IntentSenderRequest.Builder(
+                                    signInIntentSender ?: return@launch
+                                ).build()
+                            )
 
+                        }
                     }
+
                 }
 
             }
-
         }
     }
 }
@@ -222,7 +241,7 @@ fun LoginButton(name: MutableState<String>, phoneNumber: MutableState<String>) {
                         .padding(horizontal = 20.dp),
                     colors = TextFieldDefaults.textFieldColors(
                         containerColor = MaterialTheme.colorScheme.secondaryContainer,
-                        textColor = MaterialTheme.colorScheme.surfaceTint
+                        focusedTextColor = MaterialTheme.colorScheme.surfaceTint
                     )
                 )
                 Spacer(modifier = Modifier.height(10.dp))
@@ -243,7 +262,7 @@ fun LoginButton(name: MutableState<String>, phoneNumber: MutableState<String>) {
                         .padding(horizontal = 20.dp),
                     colors = TextFieldDefaults.textFieldColors(
                         containerColor = MaterialTheme.colorScheme.secondaryContainer,
-                        textColor = MaterialTheme.colorScheme.surfaceTint
+                        focusedTextColor = MaterialTheme.colorScheme.surfaceTint
                     )
                 )
                 Spacer(modifier = Modifier.height(20.dp))
