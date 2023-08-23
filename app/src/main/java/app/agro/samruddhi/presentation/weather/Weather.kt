@@ -1,4 +1,4 @@
-package app.agro.samruddhi.ui.theme
+package app.agro.samruddhi.presentation.weather
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

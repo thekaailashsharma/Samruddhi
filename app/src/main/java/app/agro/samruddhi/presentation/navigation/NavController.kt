@@ -11,7 +11,7 @@ import app.agro.samruddhi.presentation.apnabazaar.ui.ApnaBazaar
 import app.agro.samruddhi.presentation.home.ui.HomeScreen
 import app.agro.samruddhi.presentation.login.ui.LoginScreen
 import app.agro.samruddhi.presentation.selectcrop.ui.SelectCropScreen
-import app.agro.samruddhi.ui.theme.Weather
+import app.agro.samruddhi.presentation.weather.Weather
 
 
 @Composable
