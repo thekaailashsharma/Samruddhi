@@ -1,3 +1,36 @@
 <resources>
     <string name="app_name">Samruddhi</string>
+    <string name="backArrow">backArrow\n</string>
+    <string name="lucide_wheat">Wheat Logo</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="name">Name</string>
+    <string name="google">Continue with Google</string>
+    <string name="select_crop">Select Crop</string>
+    <string name="you_can_select_crop_upto">You can select crop upto</string>
+    <string name="banana">Banana</string>
+    <string name="maize">Maize</string>
+    <string name="next">Next</string>
+    <string name="apnaBazar">Apna Bazaar</string>
+    <string name="weather">Mausam Charcha</string>
+    <string name="mittikmann">Mitti K mann</string>
+    <string name="pashupalak">Pashu Palak</string>
+    <string name="take_a_picture">Take A Picture</string>
+    <string name="get_diagnosis_and_remedies">Get Diagnosis and Remedies</string>
+    <string name="swipe_up_to_scan">Swipe up to scan</string>
+    <string name="equipments">Equipments</string>
+    <string name="seeds">Seeds</string>
+    <string name="fertilizers">Fertilizers</string>
+    <string name="pesticides">Pesticides</string>
+    <string name="find_best_products_from_nearby_store">Find Best Products from Nearby Stores</string>
+    <string name="quantity">Quantity</string>
+    <string name="price">Price</string>
+    <string name="sonic">Sonic</string>
+    <string name="It_is_a_Rainy_day_Today">It is a Rainy Day Today</string>
+    <string name="humidity_value">3 cm</string>
+    <string name="navi_mumbai">Navi Mumbai</string>
+    <string name="tue_jun_30">Tue , Jun 30</string>
+    <string name="_19">19</string>
+    <string name="o">o</string>
+    <string name="rainy">Rainy</string>
+    <string name="mausam_charcha">Mausam Charcha</string>
 </resources>
