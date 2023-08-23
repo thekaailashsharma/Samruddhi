@@ -3,6 +3,7 @@ accompanistVersion = "0.28.0"
 agp = "8.1.0"
 animationsCoreVersion = "1.8.41-beta"
 coilComposeVersion = "2.3.0"
+googleServicesVersion = "4.3.15"
 hiltCompilerVersion = "2.45"
 hiltAndroidVersion = "2.45"
 hiltNavigationComposeVersion = "1.0.0"
@@ -16,6 +17,8 @@ activity-compose = "1.7.0"
 compose-bom = "2023.03.00"
 materialIconsExtendedVersion = "1.5.0"
 navigationComposeVersion = "2.7.0"
+firebase-auth-ktx = "22.1.1"
+playServicesAuthVersion = "20.6.0"
 
 [libraries]
 accompanist-navigation-animation = { group = "com.google.accompanist", name = "accompanist-navigation-animation", version.ref = "accompanistVersion" }
@@ -28,6 +31,7 @@ androidx-navigation-compose = { module = "androidx.navigation:navigation-compose
 animations-core = { module = "io.github.raamcosta.compose-destinations:animations-core", version.ref = "animationsCoreVersion" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilComposeVersion" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+google-services = { module = "com.google.gms:google-services", version.ref = "googleServicesVersion" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hiltCompilerVersion" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroidVersion" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -44,6 +48,8 @@ ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 material3 = { group = "androidx.compose.material3", name = "material3" }
+firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebase-auth-ktx" }
+play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "playServicesAuthVersion" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
