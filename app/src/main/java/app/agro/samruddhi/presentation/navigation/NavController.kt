@@ -10,6 +10,7 @@ import androidx.navigation.compose.rememberNavController
 import app.agro.samruddhi.presentation.apnabazaar.ui.ApnaBazaar
 import app.agro.samruddhi.presentation.home.ui.HomeScreen
 import app.agro.samruddhi.presentation.login.ui.LoginScreen
+import app.agro.samruddhi.presentation.login.ui.SelectOption
 import app.agro.samruddhi.presentation.selectcrop.ui.SelectCropScreen
 import app.agro.samruddhi.presentation.weather.Weather
 
@@ -19,7 +20,7 @@ fun MainNavController() {
     val navHostController = rememberNavController()
     NavHost(
         navController = navHostController,
-        startDestination = Screens.Login.route,
+        startDestination = Screens.ChooseUserType.route,
         enterTransition = {
             slideInHorizontally(
                 initialOffsetX = { it },
@@ -64,6 +65,10 @@ fun MainNavController() {
 
         composable(Screens.Weather.route) {
             Weather()
+        }
+
+        composable(Screens.ChooseUserType.route) {
+            SelectOption(navController = navHostController)
         }
 
     }
