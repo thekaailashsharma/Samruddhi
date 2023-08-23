@@ -4,8 +4,6 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     id("dagger.hilt.android.plugin")
     kotlin("kapt")
-    id("com.google.gms.google-services")
-    id("com.google.devtools.ksp")
 }
 
 android {
@@ -35,11 +33,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -56,95 +54,47 @@ android {
 
 dependencies {
 
-    //Initial
+    // Compose Bom
+    implementation(platform(libs.compose.bom))
+
+    // Compose
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation(libs.activity.compose)
-    implementation(platform(libs.compose.bom))
+    // UI
     implementation(libs.ui)
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
 
-    //Material 3
+    // Material
     implementation(libs.material3)
 
-    //Ktor Client
-    implementation(libs.ktor.client.core)
-    implementation(libs.ktor.client.android)
-    implementation(libs.ktor.client.serialization)
-    implementation(libs.ktor.client.logging)
-    implementation(libs.ktor.client.gson)
-    implementation(libs.ktor.client.cio)
+    // Accompanist
+    implementation(libs.accompanist.systemuicontroller)
+    implementation(libs.accompanist.navigation.animation)
+    implementation(libs.accompanist.permissions)
 
-    //ViewModel Compose
-    implementation(libs.viewmodel.compose)
+    // Coil
+    implementation(libs.coil.compose)
 
     //Navigation Compose
-    implementation(libs.accompanist.navigation)
+    implementation("androidx.navigation:navigation-compose:2.7.0-alpha01")
+
+    // dagger hilt
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+    // hilt navigation compose
+    implementation(libs.androidx.hilt.navigation.compose)
 
     // Material Icons Extended
-    implementation(libs.material.icons.extended)
+    implementation(libs.androidx.material.icons.extended)
 
-    //Firebase
-    implementation(platform(libs.firebase.bom))
+    //lottieCompose
+    implementation("com.airbnb.android:lottie-compose:5.2.0")
 
-    //Coil
-    implementation(libs.coilx)
 
-    //Room
-    implementation(libs.room.runtime)
-    implementation(libs.firebase.dynamic.links.ktx)
-    annotationProcessor(libs.room.compiler)
-    ksp(libs.room.compiler)
-    implementation(libs.room.ktx)
-
-    //Dagger Hilt
-    implementation(libs.dagger.hilt)
-    implementation(libs.firebase.auth.ktx)
-    implementation(libs.play.services.auth)
-    kapt(libs.dagger.hilt.kapt)
-    implementation(libs.dagger.hilt.navigation)
-
-    //Lottie Animation
-    implementation(libs.lottie)
-
-    //DataStore
-    implementation(libs.datastore.core)
-
-    //Permissions
-    implementation(libs.permissions)
-
-    //CameraX
-    implementation(libs.cameraX.core)
-    implementation(libs.cameraX.lifecycle)
-    implementation(libs.cameraX.view)
-    implementation(libs.cameraX.camera2)
-    implementation(libs.camera.camera2)
-    implementation(libs.camera.lifecycle)
-    implementation(libs.camera.view)
-
-    //MlKit
-    implementation(libs.mlkit.barcode)
-
-    //TextRecognition
-    implementation(libs.play.services.mlkit.text.recognition.common)
-    implementation(libs.play.services.mlkit.text.recognition) //LatinScript
-
-    //Keyboard
-    implementation(libs.kotlin.stdlib)
-    implementation(libs.androidx.lifecycle.service)
-    implementation(libs.lifecycle.runtime.ktx)
-    implementation(libs.splitties.systemservices)
-    implementation(libs.splitties.views)
-    implementation(libs.androidx.appcompat)
-
-    //Firebase
-    implementation(libs.firebase.messaging.ktx)
-
-    //Work Manager
-    implementation(libs.androidx.work.runtime.ktx)
-
-    //Test Android
+    // Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -152,5 +102,6 @@ dependencies {
     androidTestImplementation(libs.ui.test.junit4)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
+
 
 }

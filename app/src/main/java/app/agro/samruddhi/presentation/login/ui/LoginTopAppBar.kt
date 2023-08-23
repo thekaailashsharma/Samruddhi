@@ -1,4 +1,4 @@
-package app.samruddhi.smartagro.presentation.login.ui
+package app.agro.samruddhi.presentation.login.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -22,7 +22,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import app.samruddhi.smartagro.R
+import app.agro.samruddhi.R
 
 @Composable
 fun LoginTopBar(

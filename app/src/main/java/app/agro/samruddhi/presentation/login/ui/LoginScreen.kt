@@ -46,9 +46,9 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import app.agro.samruddhi.R
+import app.agro.samruddhi.presentation.login.LoginViewModel
+import app.agro.samruddhi.presentation.navigation.Screens
 import app.agro.samruddhi.presentation.utils.AutoSlider
-import app.samruddhi.smartagro.presentation.login.LoginViewModel
-import app.samruddhi.smartagro.presentation.login.ui.LoginTopBar
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -152,7 +152,7 @@ fun LoginButton(name: MutableState<String>, phoneNumber: MutableState<String>) {
                         .padding(horizontal = 20.dp),
                     colors = TextFieldDefaults.textFieldColors(
                         containerColor = MaterialTheme.colorScheme.secondaryContainer,
-                        focusedTextColor = MaterialTheme.colorScheme.surfaceTint
+                        textColor = MaterialTheme.colorScheme.surfaceTint
                     )
                 )
                 Spacer(modifier = Modifier.height(10.dp))
@@ -173,7 +173,7 @@ fun LoginButton(name: MutableState<String>, phoneNumber: MutableState<String>) {
                         .padding(horizontal = 20.dp),
                     colors = TextFieldDefaults.textFieldColors(
                         containerColor = MaterialTheme.colorScheme.secondaryContainer,
-                        focusedTextColor = MaterialTheme.colorScheme.surfaceTint
+                        textColor = MaterialTheme.colorScheme.surfaceTint
                     )
                 )
                 Spacer(modifier = Modifier.height(20.dp))

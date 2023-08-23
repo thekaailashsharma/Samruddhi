@@ -1,14 +1,11 @@
-package app.samruddhi.smartagro.presentation.login
+package app.agro.samruddhi.presentation.login
 
 import android.app.Application
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.snapshots.SnapshotStateList
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.AndroidViewModel
-import app.samruddhi.smartagro.R
-import app.samruddhi.smartagro.presentation.home.ui.HomeCard
-import app.samruddhi.smartagro.presentation.navigation.Screens
-import app.samruddhi.smartagro.presentation.selectCrop.ui.Crop
+import app.agro.samruddhi.R
+import app.samruddhi.smartagro.presentation.login.ImageSlider
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -18,9 +15,6 @@ class LoginViewModel @Inject constructor(
 ) : AndroidViewModel(application) {
 
     var sliderLists: SnapshotStateList<ImageSlider> = mutableStateListOf()
-    var selectCropsList: SnapshotStateList<Crop?> = mutableStateListOf(null)
-    var homeCardList: MutableList<HomeCard> = mutableListOf()
-    var selectedCropsList: SnapshotStateList<Crop?> = mutableStateListOf(null)
 
     init {
         sliderLists.add(
@@ -39,46 +33,6 @@ class LoginViewModel @Inject constructor(
             )
         )
 
-        selectCropsList.add(
-            Crop(
-                image = R.drawable.banana,
-                title = R.string.banana
-            )
-        )
-        selectCropsList.add(
-            Crop(
-                image = R.drawable.ear_of_corn,
-                title = R.string.maize
-            )
-        )
-        homeCardList.add(
-            HomeCard(
-                image = R.drawable.weather,
-                title = R.string.weather,
-                topStart = 40.dp,
-                route = Screens.Weather.route
-            )
-        )
-        homeCardList.add(
-            HomeCard(
-                image = R.drawable.apnabazar,
-                title = R.string.apnaBazar,
-                topEnd = 40.dp
-            )
-        )
-        homeCardList.add(
-            HomeCard(
-                image = R.drawable.mittikman,
-                title = R.string.mittikmann,
-                bottomLeft = 40.dp
-            )
-        )
-        homeCardList.add(
-            HomeCard(
-                image = R.drawable.pashupalak,
-                title = R.string.pashupalak,
-                bottomRight = 40.dp
-            )
-        )
+
     }
 }
