@@ -2,6 +2,7 @@ package app.agro.samruddhi.ui.theme
 
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 
 
@@ -25,6 +26,18 @@ val lightGreen = Color(0xFF0FA958)
 
 val orange000 = Color(0xFFFE724C)
 val orange001 = Color(0xFFFFBA49)
+
+val homeCardGradient = Brush.verticalGradient(
+    colors = listOf(
+        Color(0xFF26c384),
+        Color(0xFF25c383),
+        Color(0xFF25c383),
+        Color(0xFF25c383),
+        Color(0xFF24ba7f),
+        Color(0xFF23af76),
+        Color(0xFF21a16f),
+    )
+)
 
 val LightColors = lightColorScheme(
     primary = Palette.md_theme_light_primary,
