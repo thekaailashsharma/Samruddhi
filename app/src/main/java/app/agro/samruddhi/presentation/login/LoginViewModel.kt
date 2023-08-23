@@ -11,6 +11,7 @@ import app.agro.samruddhi.presentation.login.ui.SignInState
 import app.agro.samruddhi.presentation.navigation.Screens
 import app.agro.samruddhi.presentation.selectcrop.ui.Crop
 import app.agro.samruddhi.presentation.utils.SignInResult
+import app.agro.samruddhi.presentation.utils.TranslatorCardItem
 import app.samruddhi.smartagro.presentation.login.ImageSlider
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -30,6 +31,8 @@ class LoginViewModel @Inject constructor(
 
     private val _state = MutableStateFlow(SignInState())
     val state = _state.asStateFlow()
+
+    val translateList: SnapshotStateList<TranslatorCardItem> = mutableStateListOf()
 
 
     fun onSignInResult(result: SignInResult) {
@@ -131,6 +134,56 @@ class LoginViewModel @Inject constructor(
                 image = R.drawable.pashupalak,
                 title = R.string.pashupalak,
                 bottomRight = 40.dp
+            )
+        )
+
+        translateList.add(
+            TranslatorCardItem(
+                title = "English",
+                description = "English",
+                locale = "en",
+            )
+        )
+        translateList.add(
+            TranslatorCardItem(
+                title = "हिंदी",
+                description = "Hindi",
+                locale = "hi",
+            )
+        )
+        translateList.add(
+            TranslatorCardItem(
+                title = "मराठी",
+                description = "Marathi",
+                locale = "mr",
+            )
+        )
+        translateList.add(
+            TranslatorCardItem(
+                title = "ಕನ್ನಡ",
+                description = "Kannada",
+                locale = "kn",
+            )
+        )
+        translateList.add(
+            TranslatorCardItem(
+                title = "தமிழ்",
+                description = "Tamil",
+                locale = "ta",
+            )
+        )
+        translateList.add(
+            TranslatorCardItem(
+                title = "తెలుగు",
+                description = "Malayalam",
+                locale = "ml",
+            )
+        )
+        translateList.add(
+            TranslatorCardItem(
+                title = "తెలుగు",
+                description = "Telugu",
+                locale = "te",
             )
         )
 

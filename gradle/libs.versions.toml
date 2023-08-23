@@ -21,6 +21,7 @@ materialIconsExtendedVersion = "1.5.0"
 navigationComposeVersion = "2.7.0"
 firebase-auth-ktx = "22.1.1"
 playServicesAuthVersion = "20.6.0"
+material3Version = "1.1.1"
 
 [libraries]
 accompanist-navigation-animation = { group = "com.google.accompanist", name = "accompanist-navigation-animation", version.ref = "accompanistVersion" }
@@ -52,6 +53,7 @@ ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 material3 = { group = "androidx.compose.material3", name = "material3" }
+androidx-material3 = { module = "androidx.compose.material3:material3", version.ref = "material3Version" }
 firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebase-auth-ktx" }
 play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "playServicesAuthVersion" }
 
