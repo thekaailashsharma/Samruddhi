@@ -28,12 +28,14 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import app.agro.samruddhi.R
 import app.agro.samruddhi.data.DataStore
+import app.agro.samruddhi.presentation.navigation.Screens
 import kotlinx.coroutines.launch
 
 @Composable
-fun SelectOption() {
+fun SelectOption(navController: NavController) {
     val context = LocalContext.current
     val datastore = DataStore(context)
     val coroutineScope = rememberCoroutineScope()
@@ -71,11 +73,13 @@ fun SelectOption() {
             coroutineScope.launch {
                 datastore.saveUserType("Farmer")
             }
+            navController.navigate(Screens.Login.route)
         }
         Select(text = "Buyer") {
             coroutineScope.launch {
                 datastore.saveUserType("Buyer")
             }
+            navController.navigate(Screens.Login.route)
         }
 
 
