@@ -7,9 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import app.agro.samruddhi.presentation.navigation.MainNavController
+import app.agro.samruddhi.presentation.login.ui.SelectOption
 import app.agro.samruddhi.ui.theme.SamruddhiTheme
-import app.agro.samruddhi.ui.theme.SelectOption
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

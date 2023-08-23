@@ -94,7 +94,10 @@ dependencies {
     implementation(libs.androidx.material.icons.extended)
 
     //lottieCompose
-    implementation("com.airbnb.android:lottie-compose:5.2.0")
+    implementation(libs.lottie.compose)
+
+    // DataStore
+    implementation(libs.androidx.datastore.preferences)
 
 
     // Testing
