@@ -33,4 +33,9 @@
     <string name="o">o</string>
     <string name="rainy">Rainy</string>
     <string name="mausam_charcha">Mausam Charcha</string>
+    <string name="cotton">Cotton</string>
+    <string name="sugarcane">Sugarcane</string>
+    <string name="rice">Rice</string>
+    <string name="wheat">Wheat</string>
+    <string name="grapes">Grapes</string>
 </resources>

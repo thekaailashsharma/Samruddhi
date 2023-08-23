@@ -74,6 +74,36 @@ class LoginViewModel @Inject constructor(
                 title = R.string.maize
             )
         )
+        selectCropsList.add(
+            Crop(
+                image = R.drawable.cotton,
+                title = R.string.cotton
+            )
+        )
+        selectCropsList.add(
+            Crop(
+                image = R.drawable.sugarcane,
+                title = R.string.sugarcane
+            )
+        )
+        selectCropsList.add(
+            Crop(
+                image = R.drawable.rice,
+                title = R.string.rice
+            )
+        )
+        selectCropsList.add(
+            Crop(
+                image = R.drawable.wheat,
+                title = R.string.wheat
+            )
+        )
+        selectCropsList.add(
+            Crop(
+                image = R.drawable.grapes,
+                title = R.string.grapes
+            )
+        )
         homeCardList.add(
             HomeCard(
                 image = R.drawable.weather,
