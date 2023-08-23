@@ -1,6 +1,12 @@
 package app.agro.samruddhi.presentation.login.ui
 
 import android.annotation.SuppressLint
+import android.app.Activity
+import android.util.Log
+import android.widget.Toast
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.IntentSenderRequest
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -29,13 +35,18 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -49,6 +60,9 @@ import app.agro.samruddhi.R
 import app.agro.samruddhi.presentation.login.LoginViewModel
 import app.agro.samruddhi.presentation.navigation.Screens
 import app.agro.samruddhi.presentation.utils.AutoSlider
+import app.agro.samruddhi.presentation.utils.GoogleAuthUiClient
+import com.google.android.gms.auth.api.identity.Identity
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -56,8 +70,56 @@ fun LoginScreen(
     loginViewModel: LoginViewModel = hiltViewModel(),
     navController: NavController
 ) {
-    var name = remember { mutableStateOf("") }
-    var phoneNumber = remember { mutableStateOf("") }
+    val name = remember { mutableStateOf("") }
+    val phoneNumber = remember { mutableStateOf("") }
+    val coroutineScope = rememberCoroutineScope()
+    val context = LocalContext.current
+    val googleAuthUiClient by lazy {
+        GoogleAuthUiClient(
+            context = context,
+            oneTapClient = Identity.getSignInClient(context)
+        )
+    }
+    val state by loginViewModel.state.collectAsState()
+
+    LaunchedEffect(key1 = state.isSignInSuccessful) {
+        Log.i("TypeChanged", "isSignInSuccessful")
+        if (state.isSignInSuccessful) {
+            Log.i("TypeChangedCalled", "isSignInSuccessful")
+            Toast.makeText(
+                context,
+                "Sign in successful as ${googleAuthUiClient.getSignedInUser()?.email}",
+                Toast.LENGTH_LONG
+            ).show()
+            navController.popBackStack()
+            navController.navigate(Screens.SelectCrop.route)
+            loginViewModel.resetState()
+        }
+    }
+
+    LaunchedEffect(key1 = googleAuthUiClient) {
+        Log.i("Auth-Client", googleAuthUiClient.getSignedInUser().toString())
+        if (googleAuthUiClient.getSignedInUser()?.username != null) {
+            Log.i("Auth-Client2.0", googleAuthUiClient.getSignedInUser()?.email ?: "")
+            Log.i("Auth-Client2.0", googleAuthUiClient.getSignedInUser()?.username ?: "")
+            Log.i("Auth-Client2.0", googleAuthUiClient.getSignedInUser()?.profilePictureUrl ?: "")
+            navController.popBackStack()
+            navController.navigate(Screens.SelectCrop.route)
+        }
+    }
+    val launcher = rememberLauncherForActivityResult(
+        contract = ActivityResultContracts.StartIntentSenderForResult(),
+        onResult = { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                coroutineScope.launch {
+                    val signInResult = googleAuthUiClient.signInWithIntent(
+                        intent = result.data ?: return@launch
+                    )
+                    loginViewModel.onSignInResult(signInResult)
+                }
+            }
+        }
+    )
     Scaffold(
         topBar = {
             LoginTopBar(
@@ -95,7 +157,15 @@ fun LoginScreen(
                     imageVector = R.drawable.google,
                     text = stringResource(id = R.string.google)
                 ) {
-                    navController.navigate(Screens.SelectCrop.route)
+                    coroutineScope.launch {
+                        val signInIntentSender = googleAuthUiClient.signIn()
+                        launcher.launch(
+                            IntentSenderRequest.Builder(
+                                signInIntentSender ?: return@launch
+                            ).build()
+                        )
+
+                    }
                 }
 
             }
@@ -257,6 +327,11 @@ fun SocialLoginButtonPreview() {
 fun LoginButtonPreview() {
     LoginButton(name = mutableStateOf(""), phoneNumber = mutableStateOf(""))
 }
+
+data class SignInState(
+    val isSignInSuccessful: Boolean = false,
+    val signInError: String? = null
+)
 
 
 
