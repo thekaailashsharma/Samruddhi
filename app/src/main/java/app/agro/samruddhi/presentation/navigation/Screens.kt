@@ -8,4 +8,5 @@ sealed class Screens(val route: String) {
     data object ScanML : Screens("scanML")
     data object Profile : Screens("profile")
     data object Weather : Screens("weather")
+    data object ChooseUserType : Screens("chooseUserType")
 }
