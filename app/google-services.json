@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "943192078585",
+    "project_id": "samruddhi-d0846",
+    "storage_bucket": "samruddhi-d0846.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943192078585:android:914c4187749c837d040a28",
+        "android_client_info": {
+          "package_name": "app.agro.samruddhi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943192078585-9a99ij048ovtp2ru1clt5o6348ll2ju6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaP80odhvshwhK1XVBjTjdeKIBvvJJd2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943192078585-9a99ij048ovtp2ru1clt5o6348ll2ju6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
