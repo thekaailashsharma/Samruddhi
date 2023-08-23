@@ -37,6 +37,7 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+
 @Composable
 fun SamruddhiTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
@@ -50,8 +51,8 @@ fun SamruddhiTheme(
             if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
         }
 
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
+        darkTheme -> DarkColors
+        else -> LightColors
     }
     val view = LocalView.current
     if (!view.isInEditMode) {
