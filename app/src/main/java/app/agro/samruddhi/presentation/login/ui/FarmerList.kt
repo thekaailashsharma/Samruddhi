@@ -97,7 +97,7 @@ fun FarmerList() {
                 modifier = Modifier.padding(start = 60.dp, top = 10.dp, bottom = 2.dp, end = 60.dp)
             )
             Image(
-                painter = painterResource(id = R.drawable.plus),
+                painter = painterResource(id = R.drawable.minus),
                 contentDescription = "",
                 modifier = Modifier.size(50.dp)
 
