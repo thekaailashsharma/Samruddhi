@@ -38,4 +38,7 @@
     <string name="rice">Rice</string>
     <string name="wheat">Wheat</string>
     <string name="grapes">Grapes</string>
+    <string name="search_here">Search here...</string>
+    <string name="fit_the_crop_image_with_the_frame">Fit the crop image with the frame</string>
+    <string name="apple">Apple</string>
 </resources>

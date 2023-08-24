@@ -2,7 +2,6 @@ package app.agro.samruddhi.presentation.login.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -17,17 +16,14 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.focus.focusModifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.layout.ContentScale.Companion.Crop
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -65,7 +61,6 @@ fun FarmerApnabazaar() {
         Row(
             modifier = Modifier.fillMaxWidth()
         )
-
         {
 
             Card(
@@ -76,12 +71,10 @@ fun FarmerApnabazaar() {
             ) {
 
                 Row() {
-
-
                     Icon(
                         imageVector = Icons.Filled.Search,
                         contentDescription = "",
-                        tint = Color.Black,
+                        tint = MaterialTheme.colorScheme.surfaceTint,
                         modifier = Modifier
                             .padding(start = 15.dp, top = 6.dp)
                             .size(23.dp)
@@ -90,32 +83,59 @@ fun FarmerApnabazaar() {
                     Text(
                         text = "Search here...",
                         fontSize = 17.sp,
-                        color = Color.Black,
+                        color = MaterialTheme.colorScheme.surfaceTint,
                         modifier = Modifier.padding(start = 3.dp, top = 5.dp, bottom = 8.dp)
                     )
                 }
             }
         }
 
-       FarmerApnabazaarCard(image = R.drawable.wheat, Crop = "Wheat", QuantityNo = "20kg", PriceAmount ="1000" )
-        FarmerApnabazaarCard(image = R.drawable.apple, Crop = "Apple", QuantityNo = "20kg", PriceAmount ="1000" )
-        FarmerApnabazaarCard(image = R.drawable.cottonimg, Crop = "Cotton", QuantityNo = "20kg", PriceAmount ="1000" )
-        FarmerApnabazaarCard(image = R.drawable.maizeimg, Crop = "Maize", QuantityNo = "20kg", PriceAmount ="1000" )
+        FarmerApnabazaarCard(
+            image = R.drawable.wheat,
+            crop = "Wheat",
+            quantityNo = "20kg",
+            priceAmount = "1000"
+        )
+        FarmerApnabazaarCard(
+            image = R.drawable.apple,
+            crop = "Apple",
+            quantityNo = "20kg",
+            priceAmount = "1000"
+        )
+        FarmerApnabazaarCard(
+            image = R.drawable.cottonimg,
+            crop = "Cotton",
+            quantityNo = "20kg",
+            priceAmount = "1000"
+        )
+        FarmerApnabazaarCard(
+            image = R.drawable.maizeimg,
+            crop = "Maize",
+            quantityNo = "20kg",
+            priceAmount = "1000"
+        )
     }
 }
 
 
-
-
-
 @Composable
-fun FarmerApnabazaarCard(image:Int , Crop: String, QuantityNo : String , PriceAmount :String ) {
+fun FarmerApnabazaarCard(
+    image: Int,
+    crop: String,
+    quantityNo: String,
+    priceAmount: String
+) {
 
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 15.dp, start = 15.dp, end = 15.dp, bottom = 10.dp)
-            .clip(RoundedCornerShape(15.dp))
+            .clip(RoundedCornerShape(15.dp)),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.secondaryContainer,
+        ),
+        shape = RoundedCornerShape(15.dp),
+        elevation = CardDefaults.cardElevation(10.dp),
     ) {
         Row(modifier = Modifier.fillMaxWidth()) {
             Image(
@@ -126,26 +146,25 @@ fun FarmerApnabazaarCard(image:Int , Crop: String, QuantityNo : String , PriceAm
             )
             Column(modifier = Modifier.fillMaxWidth()) {
                 Text(
-                    text = Crop,
+                    text = crop,
                     fontSize = 30.sp,
                     fontWeight = FontWeight.SemiBold,
-                    color = Color.Black,
-                    modifier = Modifier
-                        .padding(start = 15.dp, top = 3.dp, bottom = 4.dp)
+                    color = MaterialTheme.colorScheme.surfaceTint,
+                    modifier = Modifier.padding(start = 15.dp, top = 3.dp, bottom = 4.dp)
                 )
 
                 Row {
                     Text(
                         text = "Quantity",
                         fontSize = 17.sp,
-                        color = Color.Black,
+                        color = MaterialTheme.colorScheme.surfaceTint,
                         modifier = Modifier.padding(start = 15.dp, top = 2.dp, bottom = 2.dp)
                     )
                     Text(
-                        text = QuantityNo,
+                        text = quantityNo,
                         fontSize = 17.sp,
                         fontWeight = FontWeight.SemiBold,
-                        color = Color.Black,
+                        color = MaterialTheme.colorScheme.surfaceTint,
                         modifier = Modifier.padding(start = 10.dp, top = 2.dp, bottom = 2.dp)
                     )
                 }
@@ -153,14 +172,14 @@ fun FarmerApnabazaarCard(image:Int , Crop: String, QuantityNo : String , PriceAm
                     Text(
                         text = "Price",
                         fontSize = 17.sp,
-                        color = Color.Black,
+                        color = MaterialTheme.colorScheme.surfaceTint,
                         modifier = Modifier.padding(start = 15.dp, top = 1.dp, bottom = 2.dp)
                     )
                     Text(
-                        text = "Rs $PriceAmount" ,
+                        text = "Rs $priceAmount",
                         fontSize = 17.sp,
                         fontWeight = FontWeight.SemiBold,
-                        color = Color.Black,
+                        color = MaterialTheme.colorScheme.surfaceTint,
                         modifier = Modifier.padding(start = 35.dp, top = 1.dp, bottom = 2.dp)
                     )
 

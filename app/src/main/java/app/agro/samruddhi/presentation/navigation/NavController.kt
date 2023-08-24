@@ -4,11 +4,13 @@ import androidx.compose.animation.core.tween
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.runtime.Composable
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import app.agro.samruddhi.presentation.apnabazaar.ui.ApnaBazaar
 import app.agro.samruddhi.presentation.home.ui.HomeScreen
+import app.agro.samruddhi.presentation.login.LoginViewModel
+import app.agro.samruddhi.presentation.login.ui.FarmerApnabazaar
 import app.agro.samruddhi.presentation.login.ui.LoginScreen
 import app.agro.samruddhi.presentation.login.ui.SelectOption
 import app.agro.samruddhi.presentation.selectcrop.ui.SelectCropScreen
@@ -18,6 +20,7 @@ import app.agro.samruddhi.presentation.weather.Weather
 @Composable
 fun MainNavController() {
     val navHostController = rememberNavController()
+    val loginViewModel: LoginViewModel = hiltViewModel()
     NavHost(
         navController = navHostController,
         startDestination = Screens.ChooseUserType.route,
@@ -60,7 +63,7 @@ fun MainNavController() {
         }
 
         composable(Screens.ApnaBazaar.route) {
-            ApnaBazaar(navController = navHostController)
+            FarmerApnabazaar()
         }
 
         composable(Screens.Weather.route) {
@@ -68,8 +71,13 @@ fun MainNavController() {
         }
 
         composable(Screens.ChooseUserType.route) {
-            SelectOption(navController = navHostController)
+            SelectOption(navHostController)
         }
+
+        composable(Screens.FarmerApnaBazaar.route) {
+            FarmerApnabazaar()
+        }
+
 
     }
 }

@@ -1,10 +1,9 @@
-package app.agro.samruddhi.ui.theme
+package app.agro.samruddhi.presentation.login.ui
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -13,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -25,10 +23,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import app.agro.samruddhi.R
+import app.agro.samruddhi.presentation.navigation.Screens
 
 @Composable
-fun SelectOption() {
+fun SelectOption(navController: NavController) {
 
     Column(
         modifier = Modifier
@@ -58,18 +58,32 @@ fun SelectOption() {
                 color = MaterialTheme.colorScheme.surfaceTint
             )
         }
-  Spacer(modifier = Modifier.height(40.dp))
-        Select(text = "Farmers")
-        Select(text = "Buyer")
+        Spacer(modifier = Modifier.height(40.dp))
+        Select(text = "Farmers") {
+            navController.navigate(Screens.Login.route)
+        }
+        Select(text = "Buyer") {
+            navController.navigate(Screens.SelectCrop.route)
+        }
 
 
     }
 }
 
 @Composable
-fun Select(text: String) {
-    Row(modifier = Modifier.padding(start = 24.dp , end= 24.dp, top= 20.dp)) {
-        Card(modifier = Modifier.fillMaxWidth(), border = BorderStroke(1.dp, Color.Green),) {
+fun Select(
+    text: String,
+    onClick: () -> Unit = {}
+) {
+    Row(modifier = Modifier.padding(start = 24.dp, end = 24.dp, top = 20.dp)) {
+        Card(
+            modifier = Modifier
+                .fillMaxWidth()
+                .clickable {
+                    onClick()
+                },
+            border = BorderStroke(1.dp, Color.Green)
+        ) {
             Text(
                 text = text,
                 fontSize = 18.sp,

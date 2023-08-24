@@ -9,4 +9,5 @@ sealed class Screens(val route: String) {
     data object Profile : Screens("profile")
     data object Weather : Screens("weather")
     data object ChooseUserType : Screens("chooseUserType")
+    data object FarmerApnaBazaar : Screens("farmerApnaBazaar")
 }
