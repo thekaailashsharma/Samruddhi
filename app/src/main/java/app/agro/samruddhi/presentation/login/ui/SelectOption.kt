@@ -63,7 +63,7 @@ fun SelectOption(navController: NavController) {
             navController.navigate(Screens.Login.route)
         }
         Select(text = "Buyer") {
-            navController.navigate(Screens.SelectCrop.route)
+            navController.navigate(Screens.BuyerApnaBazaar.route)
         }
 
 

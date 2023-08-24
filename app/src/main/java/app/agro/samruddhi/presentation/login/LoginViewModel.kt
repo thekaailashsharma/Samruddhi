@@ -97,7 +97,7 @@ class LoginViewModel @Inject constructor(
         )
         selectCropsList.add(
             Crop(
-                image = R.drawable.wheat,
+                image = R.drawable.wheat_preview,
                 title = R.string.wheat
             )
         )

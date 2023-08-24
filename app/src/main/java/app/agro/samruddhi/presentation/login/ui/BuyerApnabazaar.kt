@@ -3,6 +3,7 @@ package app.agro.samruddhi.presentation.login.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -26,10 +27,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import app.agro.samruddhi.R
+import app.agro.samruddhi.presentation.navigation.Screens
 
 @Composable
-fun BuyerApnabazaar() {
+fun BuyerApnabazaar(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -47,33 +50,44 @@ fun BuyerApnabazaar() {
         }
         Spacer(modifier = Modifier.height(10.dp))
         BuyerApnabazaarCard(
-            image = R.drawable.wheat,
-            Crop = "Wheat"
+            image = R.drawable.wheat_preview,
+            crop = "Wheat",
+            navController = navController
         )
         BuyerApnabazaarCard(
             image = R.drawable.apple,
-            Crop = "Apple"
+            crop = "Apple",
+            navController = navController
         )
         BuyerApnabazaarCard(
             image = R.drawable.maizeimg,
-            Crop = "Maize"
+            crop = "Maize",
+            navController = navController
         )
         BuyerApnabazaarCard(
             image = R.drawable.cottonimg,
-            Crop = "Cotton"
+            crop = "Cotton",
+            navController = navController
         )
     }
 }
 
 
 @Composable
-fun BuyerApnabazaarCard(image: Int, Crop: String) {
+fun BuyerApnabazaarCard(
+    image: Int,
+    crop: String,
+    navController: NavController
+) {
 
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 15.dp, start = 15.dp, end = 15.dp, bottom = 10.dp)
-            .clip(RoundedCornerShape(15.dp)),
+            .clip(RoundedCornerShape(15.dp))
+            .clickable {
+                navController.navigate(Screens.FarmerList.route)
+            },
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.secondaryContainer,
         ),
@@ -92,7 +106,7 @@ fun BuyerApnabazaarCard(image: Int, Crop: String) {
             )
             Column(modifier = Modifier.fillMaxWidth()) {
                 Text(
-                    text = Crop,
+                    text = crop,
                     fontSize = 30.sp,
                     fontWeight = FontWeight.SemiBold,
                     color = MaterialTheme.colorScheme.surfaceTint,

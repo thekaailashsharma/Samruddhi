@@ -56,7 +56,10 @@ fun BuyerList(navController: NavController) {
         Spacer(modifier = Modifier.height(10.dp))
         Column {
             Row {
-                Image(painter = painterResource(id = R.drawable.wheat), contentDescription = "")
+                Image(
+                    painter = painterResource(id = R.drawable.wheat_preview),
+                    contentDescription = ""
+                )
             }
             Row(modifier = Modifier.padding(start = 20.dp, top = 15.dp)) {
                 Text(

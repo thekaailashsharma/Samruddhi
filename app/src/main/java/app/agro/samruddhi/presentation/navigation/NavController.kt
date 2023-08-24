@@ -11,8 +11,10 @@ import androidx.navigation.compose.rememberNavController
 import app.agro.samruddhi.presentation.home.ui.HomeScreen
 import app.agro.samruddhi.presentation.login.LoginViewModel
 import app.agro.samruddhi.presentation.login.ui.BuyerAccRej
+import app.agro.samruddhi.presentation.login.ui.BuyerApnabazaar
 import app.agro.samruddhi.presentation.login.ui.BuyerList
 import app.agro.samruddhi.presentation.login.ui.FarmerApnabazaar
+import app.agro.samruddhi.presentation.login.ui.FarmerList
 import app.agro.samruddhi.presentation.login.ui.LoginScreen
 import app.agro.samruddhi.presentation.login.ui.SelectOption
 import app.agro.samruddhi.presentation.selectcrop.ui.SelectCropScreen
@@ -86,6 +88,14 @@ fun MainNavController() {
 
         composable(Screens.ConfirmBuyer.route) {
             BuyerAccRej()
+        }
+
+        composable(Screens.FarmerList.route) {
+            FarmerList()
+        }
+
+        composable(Screens.BuyerApnaBazaar.route) {
+            BuyerApnabazaar(navHostController)
         }
 
 

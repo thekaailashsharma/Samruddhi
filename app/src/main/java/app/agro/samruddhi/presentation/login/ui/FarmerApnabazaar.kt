@@ -94,7 +94,7 @@ fun FarmerApnabazaar(navController: NavController) {
         }
 
         FarmerApnabazaarCard(
-            image = R.drawable.wheat,
+            image = R.drawable.wheat_preview,
             crop = "Wheat",
             quantityNo = "20kg",
             priceAmount = "1000",

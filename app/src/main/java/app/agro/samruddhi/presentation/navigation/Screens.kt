@@ -12,5 +12,6 @@ sealed class Screens(val route: String) {
     data object FarmerApnaBazaar : Screens("farmerApnaBazaar")
     data object BuyerApnaBazaar : Screens("buyerApnaBazaar")
     data object BuyerList : Screens("buyerList")
+    data object FarmerList : Screens("farmerList")
     data object ConfirmBuyer : Screens("confirmBuyer")
 }
