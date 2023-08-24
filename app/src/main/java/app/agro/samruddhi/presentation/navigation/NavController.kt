@@ -87,7 +87,7 @@ fun MainNavController() {
         }
 
         composable(Screens.ConfirmBuyer.route) {
-            BuyerAccRej()
+            BuyerAccRej(navHostController)
         }
 
         composable(Screens.FarmerList.route) {
