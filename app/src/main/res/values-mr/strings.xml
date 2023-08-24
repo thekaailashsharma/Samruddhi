@@ -38,4 +38,20 @@
     <string name="rice">तांदूळ</string>
     <string name="wheat">गहू</string>
     <string name="grapes">द्राक्ष</string>
+    <string name="search_here">येथे शोधा...</string>
+    <string name="fit_the_crop_image_with_the_frame">क्रॉप चित्र फ्रेमसह सुविधाने मशीन ठरवा</string>
+    <string name="apple">आपले</string>
+    <string name="_25_kg">25 किलोग्रॅम</string>
+    <string name="contact_farmer">शेतकरीसोबत संपर्क साधा</string>
+    <string name="chat_on_whatsapp">व्हॉट्सएपवर चॅट करा</string>
+    <string name="abc">राज पवार</string>
+    <string name="apna_bazaar_my_crops">आपला बाजार - माझे शेती</string>
+    <string name="interested_buyers">आकर्षित खरेदीदार</string>
+    <string name="bid_price">" बोली किंमत"</string>
+    <string name="make_a_deal">वाटप करा</string>
+    <string name="requirements">" आवश्यकता:"</string>
+    <string name="quantity_120_kg_month">" मात्रा: 120 किलोग्रॅम/महिना"</string>
+    <string name="duration_6_month">" कालावधी: 6 महिने"</string>
+    <string name="decline">अस्वीकार करा</string>
+    <string name="accept">स्वीकारा</string>
 </resources>

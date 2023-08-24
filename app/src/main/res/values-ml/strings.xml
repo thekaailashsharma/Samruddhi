@@ -38,4 +38,20 @@
     <string name="rice">അരി</string>
     <string name="wheat">ഗോതമ്പ്</string>
     <string name="grapes">ദ്രാക്ഷി</string>
+    <string name="search_here">ഇവിടെ തിരയുക...</string>
+    <string name="fit_the_crop_image_with_the_frame">ക്രോപ്പ് ചിത്രം ഫ്രെയിം ഉപയോഗിച്ച് അനുകൂലപ്പെടുത്തുക</string>
+    <string name="apple">ആപ്പിൾ</string>
+    <string name="_25_kg">25 കിലോഗ്രാം</string>
+    <string name="contact_farmer">കരയ്ക്കാരനോട് ബന്ധപ്പെടുക</string>
+    <string name="chat_on_whatsapp">WhatsApp വഴി ചാറ്റ് ചെയ്യുക</string>
+    <string name="abc">രാജ് പവാർ</string>
+    <string name="apna_bazaar_my_crops">ആപ്ന ബജാർ - എന്നിവരുടെ വളരെയിലുകൾ</string>
+    <string name="interested_buyers">ആഗ്രഹിക്കുന്ന വാണിജ്യങ്ങൾ</string>
+    <string name="bid_price">" ബിഡ് വില"</string>
+    <string name="make_a_deal">ഒപ്പിക്കുക</string>
+    <string name="requirements">" ആവശ്യങ്ങൾ:"</string>
+    <string name="quantity_120_kg_month">" അളവ്: 120 കിലോഗ്രാം/മാസം"</string>
+    <string name="duration_6_month">" കാലാവധി: 6 മാസം"</string>
+    <string name="decline">നിരസിക്കുക</string>
+    <string name="accept">അംഗീകരിക്കുക</string>
 </resources>

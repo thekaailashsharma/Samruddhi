@@ -28,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -52,14 +53,14 @@ fun BuyerAccRej(navController: NavController) {
         ) {
             Row(modifier = Modifier.padding(start = 20.dp, top = 30.dp)) {
                 Text(
-                    text = "Apna Bazaar - My Crops",
+                    text = stringResource(id = R.string.apna_bazaar_my_crops),
                     fontSize = 25.sp,
                     color = MaterialTheme.colorScheme.surfaceTint
                 )
             }
             Row(modifier = Modifier.padding(start = 20.dp, top = 15.dp)) {
                 Text(
-                    text = "Interested Buyers",
+                    text = stringResource(id = R.string.interested_buyers),
                     fontSize = 23.sp,
                     color = MaterialTheme.colorScheme.surfaceTint
                 )
@@ -67,20 +68,20 @@ fun BuyerAccRej(navController: NavController) {
             Spacer(modifier = Modifier.height(10.dp))
             BuyerAccDecCard(image = R.drawable.group, Price = "1000")
             Text(
-                text = " Requirements:",
+                text = stringResource(R.string.requirements),
                 fontSize = 20.sp,
                 color = MaterialTheme.colorScheme.surfaceTint,
                 fontWeight = FontWeight.SemiBold,
                 modifier = Modifier.padding(start = 15.dp, top = 23.dp, bottom = 2.dp)
             )
             Text(
-                text = " Quantity : 120 kg/month",
+                text = stringResource(R.string.quantity_120_kg_month),
                 fontSize = 18.sp,
                 color = MaterialTheme.colorScheme.surfaceTint,
                 modifier = Modifier.padding(start = 15.dp, top = 15.dp, bottom = 2.dp)
             )
             Text(
-                text = " Duration : 6 month",
+                text = stringResource(R.string.duration_6_month),
                 fontSize = 18.sp,
                 color = MaterialTheme.colorScheme.surfaceTint,
                 modifier = Modifier.padding(start = 15.dp, top = 2.dp, bottom = 2.dp)
@@ -101,7 +102,7 @@ fun BuyerAccRej(navController: NavController) {
                     elevation = CardDefaults.cardElevation(10.dp),
                 ) {
                     Text(
-                        text = "Decline",
+                        text = stringResource(R.string.decline),
                         fontSize = 18.sp,
                         color = MaterialTheme.colorScheme.surfaceTint,
                         modifier = Modifier.padding(
@@ -124,7 +125,7 @@ fun BuyerAccRej(navController: NavController) {
                     elevation = CardDefaults.cardElevation(10.dp),
                 ) {
                     Text(
-                        text = "Accept",
+                        text = stringResource(R.string.accept),
                         fontSize = 18.sp,
                         color = MaterialTheme.colorScheme.surfaceTint,
                         modifier = Modifier.padding(
@@ -172,7 +173,7 @@ fun BuyerAccDecCard(image: Int, Price: String) {
 
                 Row() {
                     Text(
-                        text = " Bid Price",
+                        text = stringResource(id = R.string.bid_price),
                         fontSize = 17.sp,
                         color = MaterialTheme.colorScheme.surfaceTint,
                         modifier = Modifier.padding(start = 15.dp, top = 23.dp, bottom = 2.dp)

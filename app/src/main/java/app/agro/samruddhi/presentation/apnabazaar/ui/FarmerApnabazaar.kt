@@ -31,6 +31,7 @@ import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -71,7 +72,7 @@ fun FarmerApnabazaar(
         ) {
             Row(modifier = Modifier.padding(start = 10.dp, top = 30.dp)) {
                 Text(
-                    text = "Take a Picture",
+                    text = stringResource(id = R.string.take_a_picture),
                     fontSize = 25.sp,
                     fontWeight = FontWeight.SemiBold,
                     color = MaterialTheme.colorScheme.surfaceTint
@@ -79,7 +80,7 @@ fun FarmerApnabazaar(
             }
             Row(modifier = Modifier.padding(start = 10.dp, top = 4.dp)) {
                 Text(
-                    text = "Fit the crop image with the frame",
+                    text = stringResource(id = R.string.fit_the_crop_image_with_the_frame),
                     fontSize = 15.sp,
                     fontWeight = FontWeight.SemiBold,
                     color = MaterialTheme.colorScheme.surfaceTint
@@ -109,7 +110,7 @@ fun FarmerApnabazaar(
                         )
 
                         Text(
-                            text = "Search here...",
+                            text = stringResource(id = R.string.search_here),
                             fontSize = 17.sp,
                             color = MaterialTheme.colorScheme.surfaceTint,
                             modifier = Modifier.padding(start = 3.dp, top = 5.dp, bottom = 8.dp)
@@ -120,28 +121,28 @@ fun FarmerApnabazaar(
 
             FarmerApnabazaarCard(
                 image = R.drawable.wheat_preview,
-                crop = "Wheat",
+                crop = stringResource(id = R.string.wheat),
                 quantityNo = "20kg",
                 priceAmount = "1000",
                 navController = navController
             )
             FarmerApnabazaarCard(
                 image = R.drawable.apple,
-                crop = "Apple",
+                crop = stringResource(id = R.string.apple),
                 quantityNo = "20kg",
                 priceAmount = "1000",
                 navController = navController
             )
             FarmerApnabazaarCard(
                 image = R.drawable.cottonimg,
-                crop = "Cotton",
+                crop = stringResource(id = R.string.cotton),
                 quantityNo = "20kg",
                 priceAmount = "1000",
                 navController = navController
             )
             FarmerApnabazaarCard(
                 image = R.drawable.maizeimg,
-                crop = "Maize",
+                crop = stringResource(id = R.string.maize),
                 quantityNo = "20kg",
                 priceAmount = "1000",
                 navController = navController
@@ -195,7 +196,7 @@ fun FarmerApnabazaarCard(
 
                 Row {
                     Text(
-                        text = "Quantity",
+                        text = stringResource(id = R.string.quantity),
                         fontSize = 17.sp,
                         color = MaterialTheme.colorScheme.surfaceTint,
                         modifier = Modifier.padding(start = 15.dp, top = 2.dp, bottom = 2.dp)
@@ -210,7 +211,7 @@ fun FarmerApnabazaarCard(
                 }
                 Row {
                     Text(
-                        text = "Price",
+                        text = stringResource(id = R.string.price),
                         fontSize = 17.sp,
                         color = MaterialTheme.colorScheme.surfaceTint,
                         modifier = Modifier.padding(start = 15.dp, top = 1.dp, bottom = 2.dp)

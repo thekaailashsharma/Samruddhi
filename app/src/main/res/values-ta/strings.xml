@@ -38,4 +38,20 @@
     <string name="rice">அரிசி</string>
     <string name="wheat">கோதுமை</string>
     <string name="grapes">திராட்சை</string>
+    <string name="search_here">இங்கே தேடுங்கள்...</string>
+    <string name="fit_the_crop_image_with_the_frame">பயிர் படத்தை கோப்புரகத்துடன் பொருத்தவுடன் அமைக்கவும்</string>
+    <string name="apple">ஆப்பிள்</string>
+    <string name="_25_kg">25 கிலோகிராம்</string>
+    <string name="contact_farmer">விவசாயி ஒழிப்பு கைபேசி</string>
+    <string name="chat_on_whatsapp">வாட்ஸ்அப் வழிகாட்டி</string>
+    <string name="abc">ராஜ் பவார்</string>
+    <string name="apna_bazaar_my_crops">ஆப்ன பஜார் - என் பயிர்கள்</string>
+    <string name="interested_buyers">ஆர்வத்திக்குக் கையேடுகள்</string>
+    <string name="bid_price">" பிட் விலை"</string>
+    <string name="make_a_deal">ஒழிய செய்யுங்கள்</string>
+    <string name="requirements">" தேவைகள்:"</string>
+    <string name="quantity_120_kg_month">" அளவு: 120 கிலோகிராம்/மாதம்"</string>
+    <string name="duration_6_month">" காலம்: 6 மாதங்கள்"</string>
+    <string name="decline">மறுத்தல்</string>
+    <string name="accept">ஏற்று</string>
 </resources>

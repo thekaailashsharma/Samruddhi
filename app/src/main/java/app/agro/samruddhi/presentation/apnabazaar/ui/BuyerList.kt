@@ -28,6 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -47,7 +48,7 @@ fun BuyerList(navController: NavController) {
     ) {
         Row(modifier = Modifier.padding(start = 20.dp, top = 30.dp)) {
             Text(
-                text = "Apna Bazaar - My Crops",
+                text = stringResource(R.string.apna_bazaar_my_crops),
                 fontSize = 25.sp,
                 color = MaterialTheme.colorScheme.surfaceTint
             )
@@ -63,7 +64,7 @@ fun BuyerList(navController: NavController) {
             }
             Row(modifier = Modifier.padding(start = 20.dp, top = 15.dp)) {
                 Text(
-                    text = "Interested Buyers",
+                    text = stringResource(R.string.interested_buyers),
                     fontSize = 20.sp,
                     color = MaterialTheme.colorScheme.surfaceTint
                 )
@@ -145,7 +146,7 @@ fun BuyerListCard(image: Int, priceAmount: String, navController: NavController)
 
                 Row {
                     Text(
-                        text = " Bid Price",
+                        text = stringResource(R.string.bid_price),
                         fontSize = 17.sp,
                         color = MaterialTheme.colorScheme.surfaceTint,
                         modifier = Modifier.padding(start = 15.dp, top = 10.dp, bottom = 2.dp)

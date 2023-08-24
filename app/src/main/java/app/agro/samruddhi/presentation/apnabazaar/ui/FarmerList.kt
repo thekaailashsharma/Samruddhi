@@ -187,7 +187,7 @@ fun FarmerList() {
         }
         Contact(Icon = Icons.Outlined.Phone, text = stringResource(R.string.contact_farmer))
         Contact(Icon = Icons.Outlined.Whatsapp, text = stringResource(R.string.chat_on_whatsapp))
-        Select(text = "Make a deal")
+        Select(text = stringResource(R.string.make_a_deal))
 
     }
 }

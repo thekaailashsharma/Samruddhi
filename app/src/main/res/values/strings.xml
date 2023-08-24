@@ -45,4 +45,13 @@
     <string name="contact_farmer">Contact Farmer</string>
     <string name="chat_on_whatsapp">Chat on Whatsapp</string>
     <string name="abc">Raj Pawar</string>
+    <string name="apna_bazaar_my_crops">Apna Bazaar - My Crops</string>
+    <string name="interested_buyers">Interested Buyers</string>
+    <string name="bid_price">" Bid Price"</string>
+    <string name="make_a_deal">Make a deal</string>
+    <string name="requirements">" Requirements:"</string>
+    <string name="quantity_120_kg_month">" Quantity : 120 kg/month"</string>
+    <string name="duration_6_month">" Duration : 6 month"</string>
+    <string name="decline">Decline</string>
+    <string name="accept">Accept</string>
 </resources>

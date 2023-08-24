@@ -38,4 +38,20 @@
     <string name="rice">ಅಕ್ಕಿ</string>
     <string name="wheat">ಗೋಧಿ</string>
     <string name="grapes">ದ್ರಾಕ್ಷಿ</string>
+    <string name="search_here">ಇಲ್ಲಿ ಹುಡುಕಿ...</string>
+    <string name="fit_the_crop_image_with_the_frame">ಫಸಲು ಚಿತ್ರವನ್ನು ಫ್ರೇಮ್‌ನೊಂದಿಗೆ ಹೊಂದಿಸಿ</string>
+    <string name="apple">ಆಪಲ್</string>
+    <string name="_25_kg">25 ಕಿಲೋಗ್ರಾಂ</string>
+    <string name="contact_farmer">ರೈತರ ಜೊತೆ ಸಂಪರ್ಕಿಸಿ</string>
+    <string name="chat_on_whatsapp">WhatsApp ನಲ್ಲಿ ಚಾಟ್ ಮಾಡಿ</string>
+    <string name="abc">ರಾಜ್ ಪವಾರ್</string>
+    <string name="apna_bazaar_my_crops">ಆಪ್ನ ಬಜಾರ್ - ನನ್ನ ಬೆಳೆಗಳು</string>
+    <string name="interested_buyers">ಆಸಕ್ತಿ ಹೊಂದಿರುವ ಖರೀದಿದಾರರು</string>
+    <string name="bid_price">" ಬೀಡು ಬೆಲೆ"</string>
+    <string name="make_a_deal">ಒಪ್ಪಿಗೆ ಮಾಡಿ</string>
+    <string name="requirements">" ಆವಶ್ಯಕತೆಗಳು:"</string>
+    <string name="quantity_120_kg_month">" ಪ್ರಮಾಣ : 120 ಕಿಲೋಗ್ರಾಂ/ತಿಂಗಳು"</string>
+    <string name="duration_6_month">" ಅವಧಿ : 6 ತಿಂಗಳು"</string>
+    <string name="decline">ನಿರಾಕರಿಸಿ</string>
+    <string name="accept">ಒಪ್ಪಿಗೆ</string>
 </resources>

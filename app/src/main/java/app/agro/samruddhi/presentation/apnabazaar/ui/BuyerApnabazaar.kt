@@ -29,6 +29,7 @@ import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -52,7 +53,7 @@ fun BuyerApnabazaar(navController: NavController) {
     ) {
         Row(modifier = Modifier.padding(start = 10.dp, top = 30.dp)) {
             Text(
-                text = "Apna Bazaar - My Crops",
+                text = stringResource(R.string.apna_bazaar_my_crops),
                 fontSize = 25.sp,
                 color = MaterialTheme.colorScheme.surfaceTint
             )
@@ -60,22 +61,22 @@ fun BuyerApnabazaar(navController: NavController) {
         Spacer(modifier = Modifier.height(10.dp))
         BuyerApnabazaarCard(
             image = R.drawable.wheat_preview,
-            crop = "Wheat",
+            crop = stringResource(id = R.string.wheat),
             navController = navController
         )
         BuyerApnabazaarCard(
             image = R.drawable.apple,
-            crop = "Apple",
+            crop = stringResource(id = R.string.apple),
             navController = navController
         )
         BuyerApnabazaarCard(
             image = R.drawable.maizeimg,
-            crop = "Maize",
+            crop = stringResource(id = R.string.maize),
             navController = navController
         )
         BuyerApnabazaarCard(
             image = R.drawable.cottonimg,
-            crop = "Cotton",
+            crop = stringResource(id = R.string.cotton),
             navController = navController
         )
     }

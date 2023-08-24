@@ -38,4 +38,21 @@
     <string name="rice">चावल</string>
     <string name="wheat">गेहूँ</string>
     <string name="grapes">अंगूर</string>
+    <string name="search_here">यहाँ खोजें...</string>
+    <string name="fit_the_crop_image_with_the_frame">फसल छवि को फ्रेम के साथ मेल करें</string>
+    <string name="apple">सेब</string>
+    <string name="_25_kg">25 किलोग्राम</string>
+    <string name="contact_farmer">किसान से संपर्क करें</string>
+    <string name="chat_on_whatsapp">WhatsApp पर चैट करें</string>
+    <string name="abc">राज पवार</string>
+    <string name="apna_bazaar_my_crops">अपना बाजार - मेरी फसलें</string>
+    <string name="interested_buyers">रुचि रखने वाले खरीदार</string>
+    <string name="bid_price">" बोली कीमत"</string>
+    <string name="make_a_deal">सौदा करें</string>
+    <string name="requirements">" आवश्यकताएँ:"</string>
+    <string name="quantity_120_kg_month">" मात्रा : 120 किलोग्राम/महीना"</string>
+    <string name="duration_6_month">" अवधि : 6 महीना"</string>
+    <string name="decline">अस्वीकृति</string>
+    <string name="accept">स्वीकृति</string>
+
 </resources>

@@ -38,4 +38,20 @@
     <string name="rice">బియ్యం</string>
     <string name="wheat">గోధుమ</string>
     <string name="grapes">ద్రాక్షి</string>
+    <string name="search_here">ಇಲ್ಲಿ ಹುಡುಕಿ...</string>
+    <string name="fit_the_crop_image_with_the_frame">వేరుడి చిత్రాన్ని ఫ్రేముతో అనుకూలంగా అమర్చండి</string>
+    <string name="apple">ఆపిల్</string>
+    <string name="_25_kg">25 కిలోగ్రాములు</string>
+    <string name="contact_farmer">రైతుని సంప్రదించండి</string>
+    <string name="chat_on_whatsapp">వాట్సాప్ లో చాట్ చేయండి</string>
+    <string name="abc">రాజ్ పవార్</string>
+    <string name="apna_bazaar_my_crops">ఆప్న బజార్ - నా పంటలు</string>
+    <string name="interested_buyers">ఆకర్షిత ఖరీదుకులు</string>
+    <string name="bid_price">" బిడ్ ధర"</string>
+    <string name="make_a_deal">ఒప్పందం చేయండి</string>
+    <string name="requirements">" అవసరాలు:"</string>
+    <string name="quantity_120_kg_month">" పరిమాణం : 120 కిలోగ్రాములు/నెల"</string>
+    <string name="duration_6_month">" కాలం : 6 నెలలు"</string>
+    <string name="decline">తిరస్కరించు</string>
+    <string name="accept">ఆమోదించు</string>
 </resources>
