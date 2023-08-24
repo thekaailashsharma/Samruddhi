@@ -10,6 +10,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import app.agro.samruddhi.presentation.home.ui.HomeScreen
 import app.agro.samruddhi.presentation.login.LoginViewModel
+import app.agro.samruddhi.presentation.login.ui.BuyerList
 import app.agro.samruddhi.presentation.login.ui.FarmerApnabazaar
 import app.agro.samruddhi.presentation.login.ui.LoginScreen
 import app.agro.samruddhi.presentation.login.ui.SelectOption
@@ -63,7 +64,7 @@ fun MainNavController() {
         }
 
         composable(Screens.ApnaBazaar.route) {
-            FarmerApnabazaar()
+            FarmerApnabazaar(navHostController)
         }
 
         composable(Screens.Weather.route) {
@@ -74,8 +75,12 @@ fun MainNavController() {
             SelectOption(navHostController)
         }
 
+        composable(Screens.BuyerList.route) {
+            BuyerList()
+        }
+
         composable(Screens.FarmerApnaBazaar.route) {
-            FarmerApnabazaar()
+            FarmerApnabazaar(navHostController)
         }
 
 

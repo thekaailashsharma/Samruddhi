@@ -15,12 +15,12 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -73,7 +73,12 @@ fun BuyerApnabazaarCard(image: Int, Crop: String) {
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 15.dp, start = 15.dp, end = 15.dp, bottom = 10.dp)
-            .clip(RoundedCornerShape(15.dp))
+            .clip(RoundedCornerShape(15.dp)),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.secondaryContainer,
+        ),
+        shape = RoundedCornerShape(15.dp),
+        elevation = CardDefaults.cardElevation(10.dp),
     ) {
         Row(modifier = Modifier.fillMaxWidth()) {
             Image(
@@ -90,7 +95,7 @@ fun BuyerApnabazaarCard(image: Int, Crop: String) {
                     text = Crop,
                     fontSize = 30.sp,
                     fontWeight = FontWeight.SemiBold,
-                    color = Color.Black,
+                    color = MaterialTheme.colorScheme.surfaceTint,
                     modifier = Modifier
                         .padding(start = 30.dp, top = 40.dp, bottom = 4.dp)
                 )

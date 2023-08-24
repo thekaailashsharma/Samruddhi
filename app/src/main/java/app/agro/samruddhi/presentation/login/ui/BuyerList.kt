@@ -15,10 +15,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AddTask
-import androidx.compose.material.icons.filled.AssignmentTurnedIn
 import androidx.compose.material.icons.filled.Star
-import androidx.compose.material.icons.outlined.AddTask
 import androidx.compose.material.icons.outlined.AssignmentTurnedIn
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
@@ -27,7 +24,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -54,7 +50,7 @@ fun BuyerList() {
         }
 
         Spacer(modifier = Modifier.height(10.dp))
-        Column() {
+        Column {
             Row {
                 Image(painter = painterResource(id = R.drawable.wheat), contentDescription = "")
             }
@@ -67,19 +63,17 @@ fun BuyerList() {
             }
         }
         Spacer(modifier = Modifier.height(10.dp))
-        BuyerListCard(image = R.drawable.profile, PriceAmount ="11" )
-        BuyerListCard(image = R.drawable.profile, PriceAmount ="11" )
-        BuyerListCard(image = R.drawable.profile, PriceAmount ="11" )
-
+        BuyerListCard(image = R.drawable.profile, priceAmount = "10/-kg")
+        BuyerListCard(image = R.drawable.profile, priceAmount = "11/-kg")
+        BuyerListCard(image = R.drawable.profile, priceAmount = "15/-kg")
 
 
     }
 }
 
 
-
 @Composable
-fun BuyerListCard(image:Int ,PriceAmount :String ) {
+fun BuyerListCard(image: Int, priceAmount: String) {
 
     Card(
         modifier = Modifier
@@ -99,42 +93,41 @@ fun BuyerListCard(image:Int ,PriceAmount :String ) {
             Column(modifier = Modifier.fillMaxWidth()) {
                 Row {
 
-    LazyRow {
-        items(5) { listItem ->
-            Icon(
-                imageVector = Icons.Filled.Star,
-                contentDescription = "",
-                tint = Color.White,
-                modifier = Modifier
-                    .padding(start = 6.dp, top = 10.dp,)
-                    .size(26.dp)
-            )
-        }
-    }
-    Icon(
-        imageVector = Icons.Outlined.AssignmentTurnedIn,
-//        imageVector = Icons.Filled.AssignmentTurnedIn,
-        contentDescription = "",
-        tint = Color.White,
-        modifier = Modifier
-            .padding(start = 25.dp, top = 5.dp, end = 1.dp)
-            .size(26.dp)
-    )
-}
+                    LazyRow {
+                        items(5) { listItem ->
+                            Icon(
+                                imageVector = Icons.Filled.Star,
+                                contentDescription = "",
+                                tint = MaterialTheme.colorScheme.surfaceTint,
+                                modifier = Modifier
+                                    .padding(start = 6.dp, top = 10.dp)
+                                    .size(26.dp)
+                            )
+                        }
+                    }
+                    Icon(
+                        imageVector = Icons.Outlined.AssignmentTurnedIn,
+                        contentDescription = "",
+                        tint = MaterialTheme.colorScheme.surfaceTint,
+                        modifier = Modifier
+                            .padding(start = 25.dp, top = 5.dp, end = 1.dp)
+                            .size(26.dp)
+                    )
+                }
 
 
                 Row {
                     Text(
                         text = " Bid Price",
                         fontSize = 17.sp,
-                        color = Color.Black,
+                        color = MaterialTheme.colorScheme.surfaceTint,
                         modifier = Modifier.padding(start = 15.dp, top = 10.dp, bottom = 2.dp)
                     )
                     Text(
-                        text = "Rs $PriceAmount" ,
+                        text = "Rs $priceAmount",
                         fontSize = 17.sp,
                         fontWeight = FontWeight.SemiBold,
-                        color = Color.Black,
+                        color = MaterialTheme.colorScheme.surfaceTint,
                         modifier = Modifier.padding(start = 25.dp, top = 10.dp, bottom = 2.dp)
                     )
 

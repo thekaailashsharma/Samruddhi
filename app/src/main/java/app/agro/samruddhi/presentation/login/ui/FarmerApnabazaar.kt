@@ -2,6 +2,7 @@ package app.agro.samruddhi.presentation.login.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -28,10 +29,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import app.agro.samruddhi.R
+import app.agro.samruddhi.presentation.navigation.Screens
 
 @Composable
-fun FarmerApnabazaar() {
+fun FarmerApnabazaar(navController: NavController) {
 
     Column(
         modifier = Modifier
@@ -94,25 +97,29 @@ fun FarmerApnabazaar() {
             image = R.drawable.wheat,
             crop = "Wheat",
             quantityNo = "20kg",
-            priceAmount = "1000"
+            priceAmount = "1000",
+            navController = navController
         )
         FarmerApnabazaarCard(
             image = R.drawable.apple,
             crop = "Apple",
             quantityNo = "20kg",
-            priceAmount = "1000"
+            priceAmount = "1000",
+            navController = navController
         )
         FarmerApnabazaarCard(
             image = R.drawable.cottonimg,
             crop = "Cotton",
             quantityNo = "20kg",
-            priceAmount = "1000"
+            priceAmount = "1000",
+            navController = navController
         )
         FarmerApnabazaarCard(
             image = R.drawable.maizeimg,
             crop = "Maize",
             quantityNo = "20kg",
-            priceAmount = "1000"
+            priceAmount = "1000",
+            navController = navController
         )
     }
 }
@@ -120,6 +127,7 @@ fun FarmerApnabazaar() {
 
 @Composable
 fun FarmerApnabazaarCard(
+    navController: NavController,
     image: Int,
     crop: String,
     quantityNo: String,
@@ -130,7 +138,10 @@ fun FarmerApnabazaarCard(
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 15.dp, start = 15.dp, end = 15.dp, bottom = 10.dp)
-            .clip(RoundedCornerShape(15.dp)),
+            .clip(RoundedCornerShape(15.dp))
+            .clickable {
+                navController.navigate(Screens.BuyerList.route)
+            },
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.secondaryContainer,
         ),
