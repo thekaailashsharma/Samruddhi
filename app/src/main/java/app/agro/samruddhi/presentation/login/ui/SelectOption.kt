@@ -20,6 +20,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -52,17 +53,17 @@ fun SelectOption(navController: NavController) {
         }
         Row(modifier = Modifier.padding(start = 10.dp, top = 40.dp)) {
             Text(
-                text = "Are you a Farmer or a Buyer?",
+                text = stringResource(R.string.are_you_a_farmer_or_a_buyer),
                 fontSize = 25.sp,
                 fontWeight = FontWeight.SemiBold,
                 color = MaterialTheme.colorScheme.surfaceTint
             )
         }
         Spacer(modifier = Modifier.height(40.dp))
-        Select(text = "Farmers") {
+        Select(text = stringResource(R.string.farmers)) {
             navController.navigate(Screens.Login.route)
         }
-        Select(text = "Buyer") {
+        Select(text = stringResource(R.string.buyer)) {
             navController.navigate(Screens.BuyerApnaBazaar.route)
         }
 

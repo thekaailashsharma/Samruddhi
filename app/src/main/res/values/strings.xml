@@ -54,4 +54,8 @@
     <string name="duration_6_month">" Duration : 6 month"</string>
     <string name="decline">Decline</string>
     <string name="accept">Accept</string>
+    <string name="title_activity_base" translatable="false">BaseActivity</string>
+    <string name="are_you_a_farmer_or_a_buyer" translatable="false">Are you a Farmer or a Buyer?</string>
+    <string name="farmers" translatable="false">Farmers</string>
+    <string name="buyer" translatable="false">Buyer</string>
 </resources>
