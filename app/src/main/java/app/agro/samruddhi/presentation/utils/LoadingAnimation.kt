@@ -16,7 +16,7 @@ fun LoadingAnimation(apnaBazaarViewModel: ApnaBazaarViewModel) {
         AutoSlider(
             sliderList = apnaBazaarViewModel.sliderLists,
             isDotsVisible = false,
-            slidingSpeed = 700
+            slidingSpeed = 400
         )
     }
 }
