@@ -27,7 +27,7 @@ class LoginViewModel @Inject constructor(
     var sliderLists: SnapshotStateList<ImageSlider> = mutableStateListOf()
     var selectCropsList: SnapshotStateList<Crop?> = mutableStateListOf(null)
     var homeCardList: MutableList<HomeCard> = mutableListOf()
-    var selectedCropsList: SnapshotStateList<Crop?> = mutableStateListOf(null)
+    var selectedCropsList: SnapshotStateList<Crop> = mutableStateListOf()
 
     private val _state = MutableStateFlow(SignInState())
     val state = _state.asStateFlow()
@@ -97,7 +97,7 @@ class LoginViewModel @Inject constructor(
         )
         selectCropsList.add(
             Crop(
-                image = R.drawable.wheat,
+                image = R.drawable.wheat_preview,
                 title = R.string.wheat
             )
         )

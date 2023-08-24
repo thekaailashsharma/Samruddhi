@@ -82,11 +82,11 @@ fun SelectCropScreen(
             ) {
                 Spacer(modifier = Modifier.height(16.dp))
                 AnimatedVisibility(
-                    visible = viewModel.selectedCropsList.size > 1,
+                    visible = viewModel.selectedCropsList.size > 0,
                     enter = slideInVertically(tween(1000)),
                     exit = slideOutVertically(tween(1000))
                 ) {
-                    if (viewModel.selectedCropsList.size > 1) {
+                    if (viewModel.selectedCropsList.size > 0) {
                         SelectedCropHeader(
                             selectedList = viewModel.selectedCropsList
                         )
@@ -98,7 +98,7 @@ fun SelectCropScreen(
             }
             Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomCenter) {
                 AnimatedVisibility(
-                    visible = viewModel.selectedCropsList.size > 1,
+                    visible = viewModel.selectedCropsList.size > 0,
                     enter = slideInVertically(
                         initialOffsetY = { fullHeight ->
                             fullHeight
