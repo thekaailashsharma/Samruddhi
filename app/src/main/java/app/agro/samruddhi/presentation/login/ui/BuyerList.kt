@@ -2,6 +2,7 @@ package app.agro.samruddhi.presentation.login.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -18,6 +19,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material.icons.outlined.AssignmentTurnedIn
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -29,10 +31,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import app.agro.samruddhi.R
+import app.agro.samruddhi.presentation.navigation.Screens
 
 @Composable
-fun BuyerList() {
+fun BuyerList(navController: NavController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -63,9 +67,21 @@ fun BuyerList() {
             }
         }
         Spacer(modifier = Modifier.height(10.dp))
-        BuyerListCard(image = R.drawable.profile, priceAmount = "10/-kg")
-        BuyerListCard(image = R.drawable.profile, priceAmount = "11/-kg")
-        BuyerListCard(image = R.drawable.profile, priceAmount = "15/-kg")
+        BuyerListCard(
+            image = R.drawable.profile,
+            priceAmount = "10/-kg",
+            navController = navController
+        )
+        BuyerListCard(
+            image = R.drawable.profile,
+            priceAmount = "11/-kg",
+            navController = navController
+        )
+        BuyerListCard(
+            image = R.drawable.profile,
+            priceAmount = "15/-kg",
+            navController = navController
+        )
 
 
     }
@@ -73,13 +89,21 @@ fun BuyerList() {
 
 
 @Composable
-fun BuyerListCard(image: Int, priceAmount: String) {
+fun BuyerListCard(image: Int, priceAmount: String, navController: NavController) {
 
     Card(
         modifier = Modifier
             .fillMaxWidth()
             .padding(top = 15.dp, start = 15.dp, end = 15.dp, bottom = 10.dp)
             .clip(RoundedCornerShape(15.dp))
+            .clickable {
+                navController.navigate(Screens.ConfirmBuyer.route)
+            },
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.secondaryContainer,
+        ),
+        shape = RoundedCornerShape(15.dp),
+        elevation = CardDefaults.cardElevation(10.dp),
     ) {
         Row(modifier = Modifier.fillMaxWidth()) {
             Image(
