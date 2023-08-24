@@ -86,6 +86,8 @@ dependencies {
     implementation(libs.hilt.android)
     implementation(libs.firebase.auth.ktx)
     implementation(libs.play.services.auth)
+    implementation(platform(libs.compose.bom))
+    androidTestImplementation(platform(libs.compose.bom))
     kapt(libs.hilt.compiler)
 
     // hilt navigation compose

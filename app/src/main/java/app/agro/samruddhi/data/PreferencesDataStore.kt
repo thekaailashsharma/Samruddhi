@@ -18,7 +18,7 @@ class DataStore(private val context: Context) {
     }
 
     val getLocale: Flow<String> = context.datastore.data.map {
-        it[currentLocale] ?: ""
+        it[currentLocale] ?: "en"
     }
     val getUserType: Flow<String> = context.datastore.data.map {
         it[userType] ?: ""
